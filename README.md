@@ -36,17 +36,14 @@ const hasCache = rawCached !== undefined && rawCached !== null;
 
 ## 安装
 
-在 SillyTavern 中：
+在 SillyTavern 中打开 **Extensions（扩展）** 面板 → 点击 **Install Extension（安装扩展）** → 粘贴**下面任一地址** → 安装后**刷新页面**：
 
-1. 打开 **Extensions（扩展）** 面板
-2. 点击 **Install Extension（安装扩展）**
-3. 粘贴本仓库地址：
+| 源 | 地址 |
+|---|---|
+| GitHub（主仓库） | `https://github.com/Hua-git365/token-usage-monitor` |
+| Gitee（镜像，国内更快） | `https://gitee.com/luleihua/token-usage-monitor` |
 
-```
-https://github.com/Hua-git365/token-usage-monitor
-```
-
-4. 点击安装，然后**刷新页面**
+两个地址是同一份代码的镜像，装哪个都一样；带不带 `.git` 后缀都能识别。
 
 > **仓库名必须保持 `token-usage-monitor`。** 扩展代码里硬编码了设置面板路径 `third-party/token-usage-monitor`，SillyTavern 按仓库名建文件夹，改名会导致设置面板加载失败。
 
