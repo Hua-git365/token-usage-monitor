@@ -1,0 +1,83 @@
+/*
+ * Token Usage Monitor
+ *
+ * 显示位复用消息底部已有的 .tokenCounterDisplay（位于 .mes > .mesAvatarWrapper），
+ * 不新增 DOM，因此不会与其他实现产生两行重复。
+ */
+
+/*
+ * 强制可见：核心样式里有
+ *   body.no-tokenCount.no-tokenUsage .tokenCounterDisplay { display: none !important }
+ * 这里必须用更高的特异性才能压过它（4 个 class + 1 个元素 > 3 class + 1 元素）。
+ * 只在扩展自己开着时生效；扩展关闭时不干预，交回核心的规则。
+ */
+body.sctu-on .mes .mesAvatarWrapper .tokenCounterDisplay {
+    display: block !important;
+}
+
+/* 没有数据时不留空白位 */
+body.sctu-on .mes .mesAvatarWrapper .tokenCounterDisplay:empty {
+    display: none !important;
+}
+
+/* ------------------------------------------------------------ 设置面板 */
+
+.sctu-settings label {
+    display: block;
+    margin-top: 8px;
+}
+
+.sctu-settings label.checkbox_label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sctu-settings.sctu-disabled .sctu-status,
+.sctu-settings.sctu-disabled .sctu-hint {
+    opacity: 0.5;
+}
+
+.sctu-status {
+    margin-top: 12px;
+    padding: 8px 10px;
+    border-radius: var(--border-radius-md, 8px);
+    background: var(--black30a, rgba(0, 0, 0, 0.08));
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.sctu-status div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.sctu-status b {
+    font-weight: 500;
+    opacity: 0.75;
+}
+
+.sctu-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.sctu-actions .menu_button {
+    flex: 1;
+    text-align: center;
+}
+
+.sctu-hint {
+    display: block;
+    margin-top: 10px;
+    opacity: 0.7;
+    line-height: 1.7;
+}
+
+.sctu-hint code {
+    padding: 1px 4px;
+    border-radius: 3px;
+    background: var(--black30a, rgba(0, 0, 0, 0.08));
+}

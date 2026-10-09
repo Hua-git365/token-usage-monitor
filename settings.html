@@ -1,0 +1,51 @@
+<div id="sctu_settings" class="sctu-settings">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b>Token Usage Monitor · 消息 Token 用量</b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content">
+
+            <label class="checkbox_label" for="sctu_enabled">
+                <input type="checkbox" id="sctu_enabled">
+                <span>启用（在每条消息底部显示 入 / 缓存 / 出）</span>
+            </label>
+
+            <label class="checkbox_label" for="sctu_show_input">
+                <input type="checkbox" id="sctu_show_input">
+                <span>显示「入」输入 token</span>
+            </label>
+
+            <label class="checkbox_label" for="sctu_show_cache">
+                <input type="checkbox" id="sctu_show_cache">
+                <span>显示「缓存」命中 token</span>
+            </label>
+
+            <label class="checkbox_label" for="sctu_show_output">
+                <input type="checkbox" id="sctu_show_output">
+                <span>显示「出」输出 token</span>
+            </label>
+
+            <label class="checkbox_label" for="sctu_inject">
+                <input type="checkbox" id="sctu_inject">
+                <span>流式请求自动索要用量（stream_options.include_usage）</span>
+            </label>
+
+            <div class="sctu-status" id="sctu_status"></div>
+
+            <div class="sctu-actions">
+                <div class="menu_button" id="sctu_refresh">重绘并刷新统计</div>
+            </div>
+
+            <small class="sctu-hint">
+                <b>缓存三态</b>：有报且 &gt;0 → <code>缓存 1.2k</code>（命中）；有报且 =0 → <code>缓存 0</code>（明确未命中）；
+                <b>整条渠道不报缓存字段 → <code>缓存 —</code></b>（未知，不等于未命中）。<br>
+                <b>数据来源</b>：本扩展自行拦截 <code>/api/backends/chat-completions/generate</code> 的请求与响应，
+                不依赖核心任何改动，ST 更新覆盖核心文件后依然可用。原始响应原样返回，不影响正常生成。<br>
+                <b>索要用量</b>：流式场景多数服务商默认不回传 usage，需显式带上 stream_options；
+                仅对 custom / openai 渠道注入（其他渠道会拒绝该字段）。关掉它则流式下可能没有数据。
+            </small>
+
+        </div>
+    </div>
+</div>

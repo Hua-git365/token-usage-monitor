@@ -1,0 +1,12 @@
+{
+    "display_name": "Token Usage Monitor / 消息 Token 用量",
+    "loading_order": 60,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "Hua-git365",
+    "version": "1.0.0",
+    "homePage": "https://github.com/Hua-git365/token-usage-monitor",
+    "auto_update": true
+}
