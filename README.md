@@ -41,7 +41,7 @@ const hasCache = rawCached !== undefined && rawCached !== null;
 | 源 | 地址 |
 |---|---|
 | GitHub（主仓库） | `https://github.com/Hua-git365/token-usage-monitor` |
-| Gitee（镜像，国内更快） | `https://gitee.com/luleihua/token-usage-monitor` |
+| Gitee（镜像，国内更快） | `https://gitee.com/lu-leihua/token-usage-monitor` |
 
 两个地址是同一份代码的镜像，装哪个都一样；带不带 `.git` 后缀都能识别。
 
